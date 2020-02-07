@@ -1,0 +1,13 @@
+Rdfexplorer:
+1. Draggable elements from left side bar.
+2. Search
+3. Displaying property details on the right side upon selecting an item.
+
+WebVOWL:
+1. The toggle layout of the left side bar.
+2. Creating selected property links between 2 class elements.
+3. Creating selected literal on clicking the green '+' button on the class element.
+4. Deletion of the element and it's attached subclasses.
+5. Exporting the drawn knowledge graph to a ttl file consisting of OWL ontology.
+
+And also instead of using pug files, can you make this in HTML instead. Even if it's entire page in one file like the WebVOWL project it's fine.
