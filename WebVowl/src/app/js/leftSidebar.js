@@ -37,7 +37,7 @@ module.exports = function ( graph ){
   };
   
   leftSidebar.hideCollapseButton = function ( val ){
-    sideBarContainer.classed("hidden", val);
+    sideBarContainer.classed("hidden", false);
   };
   
   

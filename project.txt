@@ -11,3 +11,7 @@ WebVOWL:
 5. Exporting the drawn knowledge graph to a ttl file consisting of OWL ontology.
 
 And also instead of using pug files, can you make this in HTML instead. Even if it's entire page in one file like the WebVOWL project it's fine.
+
+
+Ok For the creation of property links and literals section on the ontology please refer the editing mode of the WebVOWL. 
+It would be easier to for you. Only the symbols change for the properties, otherwise it's same.
