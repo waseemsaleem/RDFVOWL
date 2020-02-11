@@ -273,7 +273,7 @@ module.exports = function (){
       configMenu.setup();
       
       leftSidebar.showSidebar(0);
-      leftSidebar.hideCollapseButton(true);
+      //leftSidebar.hideCollapseButton(false);
       
       
       graph.start();
@@ -362,6 +362,7 @@ module.exports = function (){
   
   
   function loadOntologyFromText( jsonText, filename, alternativeFilename ){
+    debugger;
     d3.select("#reloadCachedOntology").classed("hidden", true);
     pauseMenu.reset();
     graph.options().navigationMenu().hideAllMenus();
