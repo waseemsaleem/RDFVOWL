@@ -680,7 +680,8 @@ module.exports = function (graphContainerSelector) {
         // add touch and double click functions
 
         var svgGraph=d3.selectAll(".vowlGraph");
-        originalD3_dblClickFunction=svgGraph.on("dblclick.zoom");
+       
+        originalD3_dblClickFunction=svgGraph.on("drag");
         originalD3_touchZoomFunction=svgGraph.on("touchstart");
         svgGraph.on("touchstart",touchzoomed);
         if (editMode===true){

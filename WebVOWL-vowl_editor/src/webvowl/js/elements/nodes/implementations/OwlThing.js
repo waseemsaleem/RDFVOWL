@@ -3,6 +3,7 @@ var RoundNode = require("../RoundNode");
 module.exports = (function () {
 
 	var o = function (graph) {
+		debugger;
 		RoundNode.apply(this, arguments);
 
 		var superDrawFunction = this.draw;

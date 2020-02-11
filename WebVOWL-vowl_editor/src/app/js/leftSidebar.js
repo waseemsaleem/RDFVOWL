@@ -73,6 +73,7 @@ module.exports = function (graph) {
 
 
 	function setupSelectionContainers(){
+        debugger;
         var classContainer    = d3.select("#classContainer");
         var datatypeContainer = d3.select("#datatypeContainer");
         var propertyContainer = d3.select("#propertyContainer");
@@ -81,7 +82,7 @@ module.exports = function (graph) {
         var defaultClass="owl:Class";
         var defaultDatatype="rdfs:Literal";
         var defaultProperty="owl:objectProperty";
-
+      
         var supportedClasses=graph.options().supportedClasses();
         var supportedDatatypes=graph.options().supportedDatatypes();
         var supportedProperties=graph.options().supportedProperties();
@@ -94,7 +95,8 @@ module.exports = function (graph) {
             aClassSelectionContainer.classed("noselect",true);
             aClassSelectionContainer.node().id="selectedClass"+supportedClasses[i];
             aClassSelectionContainer.node().innerHTML=supportedClasses[i];
-
+            d3.select('#'+"selectedClass"+supportedClasses[i]).draggable({containment:'.vowlGraphr'});
+            d3.select('#'+supportedClasses[i]).draggable({containment:'.vowlGraphr'});
             if (supportedClasses[i]===defaultClass){
                 selectThisDefaultElement(aClassSelectionContainer.node());
             }
@@ -103,12 +105,14 @@ module.exports = function (graph) {
         }
 
         for (i=0;i<supportedDatatypes.length;i++){
+            
             var aDTSelectionContainer=datatypeContainer.append("div");
             aDTSelectionContainer.classed("containerForDefaultSelection",true);
             aDTSelectionContainer.classed("noselect",true);
             aDTSelectionContainer.node().id="selectedDatatype"+supportedDatatypes[i];
             aDTSelectionContainer.node().innerHTML=supportedDatatypes[i];
-
+            d3.select('#'+"selectedDatatype"+supportedDatatypes[i]).draggable({containment:'.vowlGraphr'});
+            d3.select('#'+supportedDatatypes[i]).draggable({containment:'.vowlGraphr'});
             if (supportedDatatypes[i]===defaultDatatype){
                 selectThisDefaultElement(aDTSelectionContainer.node());
             }
@@ -116,11 +120,14 @@ module.exports = function (graph) {
             defaultDatatypeSelectionContainers.push(aDTSelectionContainer);
         }
         for (i=0;i<supportedProperties.length;i++){
+            
            var aPropSelectionContainer=propertyContainer.append("div");
             aPropSelectionContainer.classed("containerForDefaultSelection",true);
             aPropSelectionContainer.classed("noselect",true);
             aPropSelectionContainer.node().id="selectedClass"+supportedProperties[i];
             aPropSelectionContainer.node().innerHTML=supportedProperties[i];
+            d3.select('#'+"selectedDatatype"+supportedProperties[i]).draggable({containment:'.vowlGraphr'});
+            d3.select('#'+supportedProperties[i]).draggable({containment:'.vowlGraphr'});
             aPropSelectionContainer.on("click",propertySelectorFunction);
             if (supportedProperties[i]===defaultProperty){
                 selectThisDefaultElement(aPropSelectionContainer.node());
